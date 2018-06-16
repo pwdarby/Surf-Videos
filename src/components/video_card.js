@@ -1,18 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-const VideoCard = (props) => {
-  const {
-    thumbnail,
-    title,
-    description,
-    index
-  } = props;
+// ToDo - styling
+const VideoCard = props => {
+  const { snippet, id, index } = props;
+  const thumbnail = snippet.thumbnails.default;
+  const videoURL = "/video_" + id;
   return (
-    <div key={index}>
-      <img src={thumbnail.url} height={thumbnail.height} width={thumbnail.width} />
-      <h3>{title}</h3>
-      {description}
-    </div>
+    <Link to={videoURL}>
+      <div key={index}>
+        <img
+          src={thumbnail.url}
+          height={thumbnail.height}
+          width={thumbnail.width}
+        />
+        <h3>{snippet.title}</h3>
+        {snippet.description}
+      </div>
+    </Link>
   );
 };
 

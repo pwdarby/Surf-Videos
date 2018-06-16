@@ -22,7 +22,7 @@ class Homepage extends Component {
     fetch(URL)
       .then((response) => response.json())
       .then((responseJson) => {
-        const videoData = responseJson.items.map(obj => obj.snippet);
+        const videoData = responseJson.items;
         this.setState({videoData: this.state.videoData.concat(videoData), pageToken: responseJson.nextPageToken});
       })
       .catch((error) => {
@@ -32,10 +32,11 @@ class Homepage extends Component {
 
 
   render(){
+    console.log(this.props);
     // console.log(finalURL);
     // console.log(this.state.videos);
     return (
-    // ToDo - wrap entire card with an href to link to the actual video page
+      // ToDo - .bind is deprecated so figure out how to do the next function with an arrow
       <InfiniteScroll
         dataLength={this.state.videoData.length}
         next={this.fetchVideos.bind(this)}
@@ -43,7 +44,8 @@ class Homepage extends Component {
         loader={<h4>Loading...</h4>}
       >
       {this.state.videoData.map((video, i) => (
-      <VideoCard thumbnail={video.thumbnails.default} index={i} title={video.title} description={video.description} />
+        <VideoCard id={video.id.videoId} snippet={video.snippet} index={i} />
+      // <VideoCard id={video.id} thumbnail={video.snippet.thumbnails.default} index={i} title={video.snippet.title} description={video.snippet.description} />
   ))}
       </InfiniteScroll>
   );
