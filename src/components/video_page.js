@@ -6,7 +6,6 @@ class VideoPage extends Component {
 
   }
   render() {
-    console.log(this.props.match.params.id);
     const videoID = this.props.match.params.id;
     const link = "https://www.youtube.com/embed/"+videoID;
     return (
