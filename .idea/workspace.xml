@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="490c1860-04f8-492f-824f-3a1f11e065c6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/homepage.js" afterPath="$PROJECT_DIR$/src/components/homepage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/video_card.js" afterPath="$PROJECT_DIR$/src/components/video_card.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/video_page.js" afterPath="$PROJECT_DIR$/src/components/video_page.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,13 +37,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/homepage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            <state relative-caret-position="233">
+              <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
+                <marker date="1529251035356" expanded="true" signature="1837:2473" ph="..." />
+                <marker date="1529251035356" expanded="true" signature="1892:2094" ph="..." />
+                <marker date="1529251035356" expanded="true" signature="1910:2029" ph="..." />
+                <marker date="1529251035356" expanded="true" signature="2119:2460" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video_card.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="video_card.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/video_card.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="85" lean-forward="false" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
+            <state relative-caret-position="238">
+              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -140,9 +145,9 @@
         <option value="$PROJECT_DIR$/src/components/app.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/homepage.js" />
         <option value="$PROJECT_DIR$/src/components/video_page.js" />
         <option value="$PROJECT_DIR$/src/components/video_card.js" />
+        <option value="$PROJECT_DIR$/src/components/homepage.js" />
       </list>
     </option>
   </component>
@@ -336,7 +341,11 @@
         <state relative-caret-position="255">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1529251035356" expanded="true" signature="1837:2473" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1892:2094" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1910:2029" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="2119:2460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -354,7 +363,11 @@
         <state relative-caret-position="322">
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1529251035356" expanded="true" signature="1837:2473" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1892:2094" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1910:2029" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="2119:2460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -480,7 +493,11 @@
         <state relative-caret-position="255">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1529251035356" expanded="true" signature="1837:2473" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1892:2094" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1910:2029" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="2119:2460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -546,16 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/video_page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -566,10 +573,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/video_card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="85" lean-forward="false" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
+        <state relative-caret-position="238">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/homepage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1529251035356" expanded="true" signature="1837:2473" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1892:2094" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="1910:2029" ph="..." />
+            <marker date="1529251035356" expanded="true" signature="2119:2460" ph="..." />
           </folding>
         </state>
       </provider>

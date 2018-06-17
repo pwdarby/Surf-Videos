@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 // ToDo - styling
 // ToDo - play around with the API, what data should we be passing to the video page?
 const VideoCard = props => {
-  const { snippet, id, index } = props;
+  const { snippet, id} = props;
   const thumbnail = snippet.thumbnails.default;
   const videoURL = "/video_" + id;
   return (
     <Link to={videoURL}>
-      <div key={index}>
+      <div>
         <img
           src={thumbnail.url}
           height={thumbnail.height}

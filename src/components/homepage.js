@@ -1,54 +1,85 @@
-import React, {Component} from 'react';
-import VideoCard from './video_card';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import React, { Component } from "react";
+import VideoCard from "./video_card";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-const API_KEY = 'AIzaSyBeimXtjgzfQcogY-fP8_CHPybmLpFaieo';
+const API_KEY = "AIzaSyBeimXtjgzfQcogY-fP8_CHPybmLpFaieo";
 //       const resultyt = responseJson.items.map(obj => "https://www.youtube.com/embed/"+obj.id.videoId);
 
-class Homepage extends Component {
+// ToDo - change to surf LOL (sloths are more fun for now)
+const BASE_QUERY = "sloth";
 
+class Homepage extends Component {
   state = {
     videoData: [],
-    query: 'sloths',
-    pageToken: ''
+    queryString: "",
+    pageToken: ""
   };
 
   componentDidMount = () => {
     this.fetchVideos();
   };
 
-  fetchVideos() {
-    let URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&q=${this.state.query}&pageToken=${this.state.pageToken}`;
-    fetch(URL)
-      .then((response) => response.json())
-      .then((responseJson) => {
+  generateUrl = () => (
+    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&q=${this
+      .state.queryString + BASE_QUERY}&pageToken=${this.state.pageToken}`
+  );
+
+  fetchVideos = () => {
+    let url = this.generateUrl();
+    fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
         const videoData = responseJson.items;
-        this.setState({videoData: this.state.videoData.concat(videoData), pageToken: responseJson.nextPageToken});
+        this.setState({
+          videoData: this.state.videoData.concat(videoData),
+          pageToken: responseJson.nextPageToken
+        });
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
       });
   };
 
+  // ToDo - naming conventions. React Docs
+  // ToDo - component is going to update every time we change the query string. Not ideal for performance.
+  handleQueryChange = event => {
+    event.preventDefault();
+    this.setState({ queryString: event.target.value + " " });
+  };
 
-  render(){
-    console.log(this.props);
-    // console.log(finalURL);
-    // console.log(this.state.videos);
+  // ToDo - naming conventions. React Docs
+  handleSearch = event => {
+    event.preventDefault();
+    this.setState({videoData : [], pageToken: ''}, () => {
+      this.fetchVideos();
+    });
+  };
+
+  render() {
     return (
       // ToDo - .bind is deprecated so figure out how to do the next function with an arrow
-      <InfiniteScroll
-        dataLength={this.state.videoData.length}
-        next={this.fetchVideos.bind(this)}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-      >
-      {this.state.videoData.map((video, i) => (
-        <VideoCard id={video.id.videoId} snippet={video.snippet} index={i} />
-      // <VideoCard id={video.id} thumbnail={video.snippet.thumbnails.default} index={i} title={video.snippet.title} description={video.snippet.description} />
-  ))}
-      </InfiniteScroll>
-  );
+      // ToDo - make search it's own component?
+      <div>
+        <form onSubmit={this.handleSearch.bind(this)}>
+          <input
+            type="text"
+            name="search"
+            onChange={this.handleQueryChange.bind(this)}
+          />
+          <input type="submit" value="Search" />
+        </form>
+        <InfiniteScroll
+          dataLength={this.state.videoData.length}
+          next={this.fetchVideos.bind(this)}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        >
+          {this.state.videoData.map((video, i) => (
+            <VideoCard id={video.id.videoId} snippet={video.snippet} key={i} />
+          ))}
+        </InfiniteScroll>
+      </div>
+    );
   }
 }
 
