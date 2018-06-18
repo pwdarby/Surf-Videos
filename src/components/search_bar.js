@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const SearchBar = props => (
-  <form onSubmit={props.handleClick}>
-    <input
-      type="text"
-      name="search"
-      onChange={props.handleChange}
-    />
+  <form onSubmit={props.onSubmit}>
+    <input type="text" name="search" onChange={props.onChange} />
     <input type="submit" value="Search" />
   </form>
 );

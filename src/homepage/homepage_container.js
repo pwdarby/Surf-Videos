@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-import VideoList from './video_list';
-import SearchBar from '../components/search_bar';
-
-// ToDo - commenting
-// ToDo - remove app.css file and any other unused files
+import Homepage from "./homepage";
 
 const API_KEY = "AIzaSyBeimXtjgzfQcogY-fP8_CHPybmLpFaieo";
-
-// ToDo - change to surf LOL (sloths are more fun for now)
-const BASE_QUERY = "sloth";
+const BASE_QUERY = "surf";
+const RESULT_COUNT = 10;
 
 class HomepageContainer extends Component {
   state = {
@@ -21,13 +16,13 @@ class HomepageContainer extends Component {
     this.getVideos();
   };
 
-  generateUrl = () =>
+  getUrl = () =>
     `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&q=${
       this.state.queryString
-    }&pageToken=${this.state.pageToken}`;
+    }&pageToken=${this.state.pageToken}&maxResults=${RESULT_COUNT}`;
 
   getVideos = () => {
-    let url = this.generateUrl();
+    let url = this.getUrl();
     fetch(url)
       .then(response => response.json())
       .then(responseJson => {
@@ -42,32 +37,28 @@ class HomepageContainer extends Component {
       });
   };
 
-  // ToDo - naming conventions. React Docs
-  // ToDo - component is going to update every time we change the query string. Not ideal for performance.
-  // ToDo - double quotes for JSX single for JS
   handleQueryChange = e => {
     e.preventDefault();
     this.setState({ queryString: `${e.target.value} ${BASE_QUERY}` });
   };
 
-  // ToDo - naming conventions. React Docs
   handleSearch = e => {
     e.preventDefault();
-    this.setState({ videoData: [], pageToken: ""}, () => {
+    this.setState({ videoData: [], pageToken: "" }, () => {
       this.getVideos();
     });
   };
 
   render() {
     return (
-
-      // ToDo - make search it's own component?
-      // ToDo - play around with InfiniteScroll component
       <div>
-      <SearchBar handleClick={this.handleSearch} handleChange={this.handleQueryChange}/>
-      <VideoList handleScroll={this.getVideos} videoData={this.state.videoData} />
-
-    </div>
+        <Homepage
+          handleSearch={this.handleSearch}
+          handleQueryChange={this.handleQueryChange}
+          handleScroll={this.getVideos}
+          videoData={this.state.videoData}
+        />
+      </div>
     );
   }
 }
